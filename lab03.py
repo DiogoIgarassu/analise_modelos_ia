@@ -2,9 +2,9 @@ import smtplib
 import cores as cor
 
 def enviar_email(assunto, mensagem):
-    remetente = 'diogoigarassu@gmail.com'
-    senha = 'dymgeqcnmuanbumt'
-    destinatario = 'euamofisica2006@hotmail.com, diogoigarassu@gmail.com'
+    remetente = 'seuemail@gmail.com'
+    senha = 'seua senha'
+    destinatario = 'seuemail@gmail.com'
 
     corpo = f"Subject: {assunto}\n\n{mensagem}"
     corpo = corpo.encode('utf-8')
