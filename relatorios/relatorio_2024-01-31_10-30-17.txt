@@ -1,0 +1,167 @@
+========================================================
+                Relatório de Teste de Parâmetros
+========================================================
+
+Número de rodada de teste: 1
+========================================================
+                     Parâmetros Iniciais
+========================================================
+
+Parametros para árvore de decisão:
+criterion: ['gini', 'entropy']
+min_samples_split: [2, 3, 5, 7]
+max_depth: [3, 5, 6, 7, 9, 11, 13, 15, 17, 19]
+min_samples_leaf: [2, 3]
+Parametros para SVM:
+param_grid C: [0.1, 1, 10]
+param_grid gamma: [1, 0.1, 0.01, 0.001]
+param_grid kernel: ['rbf']
+========================================================
+
+
+=========Random Search Results for TREE==========
+Best Score: 0.6336214975706247
+Best Hyperparameters: {'min_samples_split': 5, 'min_samples_leaf': 2, 'max_depth': 6, 'criterion': 'entropy'}
+=========Random Search Results for SVM==========
+Best Score: 0.4660051660233143
+Best Hyperparameters: {'kernel': 'rbf', 'gamma': 0.001, 'C': 10}
+
+Desempenhos medios dos modelos:
+Arvore: 0.633621 (0.007006)
+SVM: 0.466005 (0.007908)
+ComiteArvore: 0.633227 (0.011517)
+RedeNeural: 0.097283 (0.048434)
+ComiteRede: 0.265575 (0.018564)
+
+Different distributions (reject H0)
+
+Comparison stats 44.80902443717529
+Comparacao Arvore | SVM -> KruskalResult(statistic=14.285714285714278, pvalue=0.00015705228423075227)
+Comparacao Arvore | ComiteArvore -> KruskalResult(statistic=0.14328808446455096, pvalue=0.7050338476036618)
+Comparacao Arvore | RedeNeural -> KruskalResult(statistic=14.404852160727815, pvalue=0.0001474219629331816)
+Comparacao Arvore | CRNA -> KruskalResult(statistic=14.52599388379204, pvalue=0.00013823888938339823)
+Comparacao SVM | RedeNeural -> KruskalResult(statistic=14.404852160727815, pvalue=0.0001474219629331816)
+Comparacao SVM | ComiteArvore -> KruskalResult(statistic=14.285714285714278, pvalue=0.00015705228423075227)
+Comparacao SVM | ComiteRede -> KruskalResult(statistic=14.52599388379204, pvalue=0.00013823888938339823)
+Comparacao ComiteArvore | ComiteRede -> KruskalResult(statistic=14.52599388379204, pvalue=0.00013823888938339823)
+Comparacao ComiteArvore | RedeNeural -> KruskalResult(statistic=14.404852160727815, pvalue=0.0001474219629331816)
+Comparacao RedeNeural | ComiteRede -> KruskalResult(statistic=14.649190439475705, pvalue=0.0001294902508073666)
+
+Acuracia Comite de Arvore: Treinamento 0.9967672413793104, Teste 0.6420805171907141
+Clasification report:               precision    recall  f1-score   support
+
+    BARBUNYA       0.46      0.45      0.46       322
+      BOMBAY       1.00      1.00      1.00       125
+        CALI       0.63      0.59      0.61       418
+    DERMASON       0.80      0.82      0.81       898
+       HOROZ       0.57      0.60      0.58       477
+       SEKER       0.53      0.50      0.51       503
+        SIRA       0.59      0.60      0.59       660
+
+    accuracy                           0.64      3403
+   macro avg       0.65      0.65      0.65      3403
+weighted avg       0.64      0.64      0.64      3403
+
+Confussion matrix:
+ [[146   0 124   0  48   0   4]
+ [  0 125   0   0   0   0   0]
+ [131   0 248   0  39   0   0]
+ [  0   0   0 732   4 115  47]
+ [ 37   0  21  10 288  11 110]
+ [  1   0   0 117  22 252 111]
+ [  4   0   0  56 108  98 394]]
+Acuracia SVC: Treinamento", 0.9747257053291536, Teste 0.48104613576256244
+Clasification report:               precision    recall  f1-score   support
+
+    BARBUNYA       0.45      0.19      0.27       322
+      BOMBAY       0.00      0.00      0.00       125
+        CALI       0.53      0.25      0.34       418
+    DERMASON       0.44      0.77      0.56       898
+       HOROZ       0.54      0.42      0.47       477
+       SEKER       0.45      0.44      0.44       503
+        SIRA       0.55      0.54      0.55       660
+
+    accuracy                           0.48      3403
+   macro avg       0.42      0.37      0.38      3403
+weighted avg       0.47      0.48      0.45      3403
+
+Confussion matrix:
+ [[ 62   0  67 162  25   0   6]
+ [  0   0   0 125   0   0   0]
+ [ 50   0 106 238  23   0   1]
+ [  0   0   0 694   5 141  58]
+ [ 19   0  23 113 198   9 115]
+ [  0   0   1 148  22 219 113]
+ [  8   0   3  80  95 116 358]]
+
+Acuracia Arvore: Treinamento", 0.6452782131661442, Teste 0.6382603585071995
+Clasification report:",               precision    recall  f1-score   support
+
+    BARBUNYA       0.41      0.09      0.14       322
+      BOMBAY       1.00      1.00      1.00       125
+        CALI       0.60      0.86      0.70       418
+    DERMASON       0.75      0.87      0.81       898
+       HOROZ       0.61      0.58      0.60       477
+       SEKER       0.43      0.20      0.27       503
+        SIRA       0.57      0.76      0.65       660
+
+    accuracy                           0.64      3403
+   macro avg       0.62      0.62      0.60      3403
+weighted avg       0.61      0.64      0.60      3403
+
+Confussion matrix:
+ [[ 28   0 218   0  67   1   8]
+ [  0 125   0   0   0   0   0]
+ [ 22   0 360   0  35   0   1]
+ [  0   0   0 782   0  72  44]
+ [ 19   0  26   8 276  11 137]
+ [  0   0   0 202   9 101 191]
+ [  0   0   0  47  62  51 500]]
+
+Acuracia Rede Neural: Treinamento", 0.1421434169278997, Teste 0.1401704378489568
+Clasification report:               precision    recall  f1-score   support
+
+    BARBUNYA       0.00      0.00      0.00       322
+      BOMBAY       0.00      0.00      0.00       125
+        CALI       0.00      0.00      0.00       418
+    DERMASON       0.00      0.00      0.00       898
+       HOROZ       0.14      1.00      0.25       477
+       SEKER       0.00      0.00      0.00       503
+        SIRA       0.00      0.00      0.00       660
+
+    accuracy                           0.14      3403
+   macro avg       0.02      0.14      0.04      3403
+weighted avg       0.02      0.14      0.03      3403
+
+Confussion matrix:
+ [[  0   0   0   0 322   0   0]
+ [  0   0   0   0 125   0   0]
+ [  0   0   0   0 418   0   0]
+ [  0   0   0   0 898   0   0]
+ [  0   0   0   0 477   0   0]
+ [  0   0   0   0 503   0   0]
+ [  0   0   0   0 660   0   0]]
+
+Acuracia Comite RNA: Treinamento 0.25940438871473354, Teste 0.26388480752277405
+Clasification report:               precision    recall  f1-score   support
+
+    BARBUNYA       0.00      0.00      0.00       322
+      BOMBAY       0.00      0.00      0.00       125
+        CALI       0.00      0.00      0.00       418
+    DERMASON       0.26      1.00      0.42       898
+       HOROZ       0.00      0.00      0.00       477
+       SEKER       0.00      0.00      0.00       503
+        SIRA       0.00      0.00      0.00       660
+
+    accuracy                           0.26      3403
+   macro avg       0.04      0.14      0.06      3403
+weighted avg       0.07      0.26      0.11      3403
+
+Confussion matrix:
+ [[  0   0   0 322   0   0   0]
+ [  0   0   0 125   0   0   0]
+ [  0   0   0 418   0   0   0]
+ [  0   0   0 898   0   0   0]
+ [  0   0   0 477   0   0   0]
+ [  0   0   0 503   0   0   0]
+ [  0   0   0 660   0   0   0]]
